@@ -2,10 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: './es6/main.js',
+    entry: './src/main.js',
     output: {
         path: __dirname,
-        filename: 'bundle.js'
+        filename: './dist/bundle.js'
     },
     resolve: {
         extensions: ['', '.js', '.jsx']
@@ -14,10 +14,7 @@ module.exports = {
         loaders: [
             {
                 loader: 'babel-loader',
-                test: path.join(__dirname, 'es6'),
-                query: {
-                  presets: ['es2015', 'react'],
-                },
+                test: path.join(__dirname, 'src')
             }
         ]
     },
