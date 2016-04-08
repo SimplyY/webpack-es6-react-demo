@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+import AutoComplete from './component/AutoComplete'
+
+const dataArray = ['a', 'ab', 'abc', 'data', 'dataArray']
 
 class Root extends Component {
     constructor() {
@@ -7,10 +10,11 @@ class Root extends Component {
     render() {
         return (
             <div>
-                hello world
+                <AutoComplete dataArray={dataArray}/>
             </div>
         )
     }
 }
+
 
 export default Root
