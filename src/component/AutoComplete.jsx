@@ -11,17 +11,16 @@ class AutoComplete extends Component {
     render() {
         const { dataArray } = this.props
         const tips = getTips(dataArray, this.state.inputStr)
-        const tipsDOM = tips.map(item => {
-            return (
-                <li key={item}>{item}</li>
-            )
-        })
 
         return (
             <div>
                 <input className="auto-complete-input" onChange={handleChange.bind(this)}/>
                 <div className="auto-complete-tips">
-                    {tipsDOM}
+                    {tips.map(item => {
+                        return (
+                            <li key={item}>{item}</li>
+                        )
+                    })}
                 </div>
             </div>
         )
